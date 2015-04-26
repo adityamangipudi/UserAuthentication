@@ -1,0 +1,65 @@
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web)
+
+$height: 50px
+$lineheight: 51px
+$background: #ffffff
+$border: 1px solid #848382
+$acol: #575655
+$font: 'Titilliu Web', sans-serif
+$pad: 10px
+
+*
+  margin: 0
+  padding: 0
+
+html, body
+  font-family: $font
+  height: 100%
+  text-align: center
+  background-color: $background
+
+header>nav>h2
+  font-weight: 200
+  float: left
+  padding-left: 3* $pad
+
+header>nav>a
+  padding-right: $pad
+
+header>nav
+  background: darken($background, 10)
+  border-bottom: $border
+
+.navbar
+  height: $height
+  line-height: $lineheight
+  font-size: 14px
+  margin-bottom: 1em
+
+ul >li
+  float: right
+  list-style-type: none
+  padding-right: $pad
+  border-right: $border
+  font-weight: 600
+  background-color: darken($background, 10)
+  border-bottom: $border
+  height: $height
+  line-height: $lineheight
+
+ul
+  height: $height
+  line-height: $height
+  float: right
+  border-left: $border
+
+li>a
+  font-weight: 200
+  padding-left: $pad
+  color: $acol
+
+li>a#active
+  color: $acol
+
+
+

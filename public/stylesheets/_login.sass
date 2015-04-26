@@ -1,0 +1,42 @@
+$height: 4em
+$formheight: 18em
+$centerH1: calc(50% - 10em)
+$centerdiv: calc(50% - 9em)
+$inputWid: calc(100% - 9em)
+$background: #919090
+$shad: 0 0 1px rgba(0, 0, 0, 0.3),0 3px 7px rgba(0, 0, 0, 0.3),inset 0 1px rgba(255,255,255,1),inset 0 -3px 2px rgba(0,0,0,0.25)
+
+div.loginInfo
+  margin-top: 1em
+  height: $formheight
+  width: $formheight
+  text-align: center
+  background-color: $background
+  margin-left: $centerdiv
+  border-radius: 8px
+
+form[name="userLogin"]
+  height: $formheight
+  box-shadow: $shad
+  border-radius: 5px
+  background: linear-gradient(#eeefef, #535353 85%)
+form[name="userLogin"]>*
+  height: $height
+  width: $inputWid
+  margin-bottom: 1em
+  line-height: 1.5em
+  border-radius: 5px
+  text-align: center
+
+
+form[name="userLogin"]>input[type="email"]
+  margin-top: 5em
+
+form[name="userLogin"]>input[type="submit"]
+  margin-top: 1em
+  background-color: #007aff
+  color: white
+
+
+.hide
+  display: none

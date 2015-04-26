@@ -1,0 +1,138 @@
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web);
+* {
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  font-family: "Titilliu Web", sans-serif;
+  height: 100%;
+  text-align: center;
+  background-color: #ffffff; }
+
+header > nav > h2 {
+  font-weight: 200;
+  float: left;
+  padding-left: 30px; }
+
+header > nav > a {
+  padding-right: 10px; }
+
+header > nav {
+  background: #e6e6e6;
+  border-bottom: 1px solid #848382; }
+
+.navbar {
+  height: 50px;
+  line-height: 51px;
+  font-size: 14px;
+  margin-bottom: 1em; }
+
+ul > li {
+  float: right;
+  list-style-type: none;
+  padding-right: 10px;
+  border-right: 1px solid #848382;
+  font-weight: 600;
+  background-color: #e6e6e6;
+  border-bottom: 1px solid #848382;
+  height: 50px;
+  line-height: 51px; }
+
+ul {
+  height: 50px;
+  line-height: 50px;
+  float: right;
+  border-left: 1px solid #848382; }
+
+li > a {
+  font-weight: 200;
+  padding-left: 10px;
+  color: #575655; }
+
+li > a#active {
+  color: #575655; }
+
+h1 {
+  margin-left: calc(50% - 10em);
+  width: 20em;
+  font-weight: 300; }
+
+div.signUpInfo {
+  margin-top: 1em;
+  height: 24em;
+  width: 18em;
+  text-align: center;
+  background-color: #919090;
+  margin-left: calc(50% - 9em);
+  border-radius: 8px; }
+
+form[name="userSignUp"] {
+  height: 24em;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 3px 7px rgba(0, 0, 0, 0.3), inset 0 1px white, inset 0 -3px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  background: linear-gradient(#eeefef, #535353 85%); }
+
+form[name="userSignUp"] > input[type="text"] {
+  margin-top: 4em; }
+
+form[name="userSignUp"] > input {
+  margin-top: 1em; }
+
+form[name="userSignUp"] > * {
+  height: 4em;
+  width: calc(100% - 9em);
+  line-height: 1.5em;
+  border-radius: 5px;
+  text-align: center; }
+
+form[name="userSignUp"] > input[type="submit"] {
+  margin-top: 1em;
+  background-color: #007aff;
+  color: white; }
+
+div.pass-requirements {
+  margin-top: 0.5em;
+  margin-left: calc(50% - 9em);
+  line-height: 12px;
+  font-size: 11px;
+  font-weight: 400;
+  color: #cccccc; }
+
+div.loginInfo {
+  margin-top: 1em;
+  height: 18em;
+  width: 18em;
+  text-align: center;
+  background-color: #919090;
+  margin-left: calc(50% - 9em);
+  border-radius: 8px; }
+
+form[name="userLogin"] {
+  height: 18em;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 3px 7px rgba(0, 0, 0, 0.3), inset 0 1px white, inset 0 -3px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  background: linear-gradient(#eeefef, #535353 85%); }
+
+form[name="userLogin"] > * {
+  height: 4em;
+  width: calc(100% - 9em);
+  margin-bottom: 1em;
+  line-height: 1.5em;
+  border-radius: 5px;
+  text-align: center; }
+
+form[name="userLogin"] > input[type="email"] {
+  margin-top: 5em; }
+
+form[name="userLogin"] > input[type="submit"] {
+  margin-top: 1em;
+  background-color: #007aff;
+  color: white; }
+
+.hide {
+  display: none; }
+
+button.getContacts {
+  margin-top: 5em; }
+
+/*# sourceMappingURL=UserAuth.css.map */

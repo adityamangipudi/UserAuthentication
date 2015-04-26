@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Authentication</title>
+    <link rel='stylesheet' href='/stylesheets/UserAuth.css' />
+  </head>
+  <body>
+      <div class="unauthenticated-user">
+          <header>
+
+
+              <nav class="navbar">
+                  <h2><span class="nav-header">UserAuthentication</span></h2>
+                  <!--<a class = "logo" href="#">AW<span style="color:#3c948b;">WW</span>ARDS</a>-->
+                  <ul class="ulList">
+                      <li><a id="signup" href ="#" >Signup</a></li>
+                      <li><a id="login" href ="#" >Login</a></li>
+                  </ul>
+              </nav>
+          </header>
+          <h1 class = "user-created hide">User Created! Please Login.</h1>
+          <h1 class = "signup-title">Please Sign Up with Email and Password</h1>
+          <h1 class = "login-title hide">Please Login with Email and Password</h1>
+          <div class="signUpInfo" id="signup">
+
+              <form name="userSignUp">
+                  <input type="text" name="name" placeholder="full name"/><br>
+                  <input type="email" name="email" placeholder="email"/><br>
+                  <input type="password" name="password" placeholder="password"/><br>
+                  <input type="password" name="confirmpassword" placeholder="password"/><br>
+                  <div class="pass-requirements">Password Requirements: Atleast 1 uppercase, 1 lowercase, 1 digit, between 6 and 20 characters</div>
+                  <input class="signup" type="submit" value="Sign Up"/>
+              </form>
+
+
+          </div>
+          <div class="loginInfo hide" id="login">
+
+              <form name="userLogin">
+                  <input type="email" name="email" placeholder="email"/><br>
+                  <input type="password" name="password" placeholder="password"/><br>
+                  <input class="login" type="submit" value="Login"/>
+              </form>
+
+
+          </div>
+      </div>
+      <div class="authenticated-user hide">
+          <header>
+
+
+              <nav class="navbar">
+                  <h2><span class="nav-header">AuthenticatedUser</span></h2>
+                  <!--<a class = "logo" href="#">AW<span style="color:#3c948b;">WW</span>ARDS</a>-->
+                  <ul class="ulList">
+                      <li><a id="logout" href ="#" >Logout</a></li>
+
+                  </ul>
+              </nav>
+          </header>
+          <h1 class = "authenticated-title">Welcome! Click the button to get all contacts</h1>
+
+          <button class = "getContacts" data-u-id = "">Get all Contacts</button>
+
+      </div>
+
+    <script src="/javascripts/Usersignup.js"></script>
+      <script src="/javascripts/Userlogin.js"></script>
+      <script src="/javascripts/Authenticateduser.js"></script>
+
+  </body>
+</html>
