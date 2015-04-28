@@ -7,13 +7,15 @@ var SignupModel = require('../models/user_model')
 var SessionModel = require('../models/login_model')
 
 
+
 /* GET home page. */
 router.post('/', function(req, res, next) {
     //console.log(req.body)
+    console.log(req.cookies);
     SignupModel.find(req.body, function(err, result){
         //console.log(result)
         if(err) {
-            res.status(500).json(err)
+            res.status(500).json(err);
         }
         else {
 
@@ -23,8 +25,8 @@ router.post('/', function(req, res, next) {
                 //var cookieId
                // console.log('in here 1')
 
-                var id=obj._id
-                var limit = 900000*4
+                var id=obj._id;
+                var limit = 900000*4;
                 var expiretime = new Date(Date.now() + limit);
 
 
@@ -48,15 +50,16 @@ router.post('/', function(req, res, next) {
                                 else {
                                     //console.log(result)
                                     var cookieId = result['_id'];
-                                    res.cookie('session-id', cookieId, {expires: expiretime, httpOnly: false})
+                                    res.cookie('session-id', cookieId, {expires: expiretime, httpOnly: false});
                                     res.status(200).json(result);
                                 }
                             });
                         }else{
                             var obj = result.pop();
                             var userData = { timestamp: expiretime};
+                            console.log(obj)
                            // console.log('in here 5');
-                            SessionModel.update(userData, function(err, result){
+                            SessionModel.update({_id: obj['_id']},userData, function(err, result){
                                 if (err) {
                                     res.status(500).json(err);
                                 }
@@ -64,7 +67,7 @@ router.post('/', function(req, res, next) {
                                     //console.log(result)
 
                                     var cookieId = obj['_id'];
-                                    res.cookie('session-id', cookieId, {expires: expiretime, maxAge: limit, httpOnly: false})
+                                    res.cookie('session-id', cookieId, {expires: expiretime, maxAge: limit, httpOnly: false});
                                     res.status(200).json(result);
                                 }
 
@@ -78,7 +81,7 @@ router.post('/', function(req, res, next) {
                 //no such user
                 //console.log('in here 7')
 
-                res.status(200).json(result)
+                res.status(200).json(result);
             }
         }
     });

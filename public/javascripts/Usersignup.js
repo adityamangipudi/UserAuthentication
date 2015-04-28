@@ -15,43 +15,43 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if((event.target.id === 'signup'||event.target.id === 'login')&&
             (!(userCreatedheader.classList.contains('hide')))){
-            signupheader.innerHTML = 'Please Sign Up with Email and Password'
-            loginheader.innerHTML = 'Please Login with Email and Password'
+            signupheader.innerHTML = 'Please Sign Up with Email and Password';
+            loginheader.innerHTML = 'Please Login with Email and Password';
 
-            userCreatedheader.classList.add('hide')
+            userCreatedheader.classList.add('hide');
             if(event.target.id === 'signup'){
-                signupdiv.classList.toggle('hide')
-                signupheader.classList.toggle('hide')
+                signupdiv.classList.toggle('hide');
+                signupheader.classList.toggle('hide');
             }else{
-                logindiv.classList.toggle('hide')
-                loginheader.classList.toggle('hide')
+                logindiv.classList.toggle('hide');
+                loginheader.classList.toggle('hide');
             }
 
         }
         else if(event.target.id === 'signup'&&(userCreatedheader.classList.contains('hide'))){
-            signupheader.innerHTML = 'Please Sign Up with Email and Password'
-            loginheader.innerHTML = 'Please Login with Email and Password'
+            signupheader.innerHTML = 'Please Sign Up with Email and Password';
+            loginheader.innerHTML = 'Please Login with Email and Password';
 
             if(signupheader.classList.contains('hide')){
 
-                loginheader.classList.toggle('hide')
-                signupheader.classList.toggle('hide')
-                signupdiv.classList.toggle('hide')
-                logindiv.classList.toggle('hide')
+                loginheader.classList.toggle('hide');
+                signupheader.classList.toggle('hide');
+                signupdiv.classList.toggle('hide');
+                logindiv.classList.toggle('hide');
 
             }
 
         }else if(event.target.id === 'login'&&(userCreatedheader.classList.contains('hide'))){
-            signupheader.innerHTML = 'Please Sign Up with Email and Password'
-            loginheader.innerHTML = 'Please Login with Email and Password'
+            signupheader.innerHTML = 'Please Sign Up with Email and Password';
+            loginheader.innerHTML = 'Please Login with Email and Password';
 
 
             if(loginheader.classList.contains('hide')){
 
-                loginheader.classList.toggle('hide')
-                signupheader.classList.toggle('hide')
-                signupdiv.classList.toggle('hide')
-                logindiv.classList.toggle('hide')
+                loginheader.classList.toggle('hide');
+                signupheader.classList.toggle('hide');
+                signupdiv.classList.toggle('hide');
+                logindiv.classList.toggle('hide');
             }
 
         }
@@ -73,27 +73,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if(xhr.readyState===4){
 
-                      var response = JSON.parse(xhr.responseText)
-                     console.log(response)
+                      var response = JSON.parse(xhr.responseText);
+                     console.log(response);
                     if( response.name !=='MongoError' && response.name !=='ValidationError') {
                        // console.log('user created')
 
-                        signupheader.classList.toggle('hide')
-                        signupdiv.classList.toggle('hide')
-                        userCreatedheader.classList.remove('hide')
+                        signupheader.classList.toggle('hide');
+                        signupdiv.classList.toggle('hide');
+                        userCreatedheader.classList.remove('hide');
 
 
                     }else{
-                        signupheader.innerHTML = 'There was an error. Please try again'
+                        signupheader.innerHTML = 'There was an error. Please try again';
                         //console.log('user not created. use different email')
                     }
 
                 }
 
             })
-            document.forms.userSignUp.reset()
+            document.forms.userSignUp.reset();
         }else{
-            signupheader.innerHTML = 'There was an error. Please try again'
+            signupheader.innerHTML = 'There was an error. Please try again';
 
             //console.log('Please enter matching passwords that meet the requirements and fill all fields')
         }
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var xhr = new XMLHttpRequest();
         xhr.open('POST', url);
 
-        xhr.setRequestHeader('Content-Type', 'application/json')
+        xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.addEventListener('readystatechange', function () {
             if (xhr.readyState === 4) {
                 callback(xhr);

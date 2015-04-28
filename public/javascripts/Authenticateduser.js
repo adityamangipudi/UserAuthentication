@@ -8,9 +8,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.querySelector('a#logout').addEventListener('click', function(event){
         loginheader.innerHTML ='Please Login with Email and Password'
-        document.querySelector('div.authenticated-user').classList.add('hide')
-        document.querySelector('div.unauthenticated-user').classList.remove('hide')
+        document.querySelector('div.authenticated-user').classList.add('hide');
+        document.querySelector('div.unauthenticated-user').classList.remove('hide');
+        makeAjaxCall('/session/logout',callback=function(xhr){
+            if(xhr.readyState===4){
 
+               // var response = JSON.parse(xhr.responseText);
+                console.log(document.cookie)
+
+            }
+        });
 
     })
 
@@ -19,15 +26,15 @@ document.addEventListener('DOMContentLoaded', function () {
         callback=function(xhr){
             if(xhr.readyState===4){
 
-                var response = JSON.parse(xhr.responseText)
+                var response = JSON.parse(xhr.responseText);
 
                 if(Array.isArray(response)){
-                    console.log(response)
+                    console.log(response);
                 }
                 else{
                     loginheader.innerHTML ='Please Login with Email and Password'
-                    document.querySelector('div.authenticated-user').classList.add('hide')
-                    document.querySelector('div.unauthenticated-user').classList.remove('hide')
+                    document.querySelector('div.authenticated-user').classList.add('hide');
+                    document.querySelector('div.unauthenticated-user').classList.remove('hide');
 
 
                 }
@@ -46,6 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 callback(xhr);
             }
         });
-        xhr.send()
+        xhr.send();
     }
 });

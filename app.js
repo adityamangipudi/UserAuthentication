@@ -11,8 +11,8 @@ var login = require('./routes/login');
 var signup = require('./routes/signup');
 var session = require('./routes/session');
 require('mongoose').connect('mongodb://localhost/test', function(err){
-  if(err) console.log('could not connect to mongodb ...')
-  else console.log('connected to mongodb')
+  if(err) console.log('could not connect to mongodb ...');
+  else console.log('connected to mongodb');
 })
 
 var app = express();
@@ -30,6 +30,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+
 app.use('/users', users);
 app.use('/login', login);
 app.use('/signup', signup);

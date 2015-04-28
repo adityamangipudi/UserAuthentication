@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-    var loginbutton = document.querySelector('input.login')
+    var loginbutton = document.querySelector('input.login');
 
     loginbutton.addEventListener('click', function(event){
 
@@ -18,18 +18,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 password: document.forms.userLogin.password.value}, function(xhr){
                 if(xhr.readyState===4){
 
-                    var response = JSON.parse(xhr.responseText)
+                    var response = JSON.parse(xhr.responseText);
                     //console.log(response)
                     if(typeof response.name ==='undefined' && response.length!==0 ) {
-                        var cookie = document.cookie.split('; ').pop()
+                        console.log(document.cookie);
+                        var cookie = document.cookie.split('; ').pop();
                         //console.log(cookie)
                        // console.log('session created')
-                        document.querySelector('div.unauthenticated-user').classList.add('hide')
-                        document.querySelector('div.authenticated-user').classList.remove('hide')
+                        document.querySelector('div.unauthenticated-user').classList.add('hide');
+                        document.querySelector('div.authenticated-user').classList.remove('hide');
                     }else{
                         var loginheader = document.querySelector('.login-title');
 
-                        loginheader.innerHTML = 'The email and password is invalid. Please try signing up first.'
+                        loginheader.innerHTML = 'The email and password is invalid. Please try signing up first.';
 
                         //make sure they are signed up
                         //console.log('session not created. use correct email and password')
@@ -37,12 +38,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 }
 
-            })
-            document.forms.userLogin.reset()
+            });
+            document.forms.userLogin.reset();
         }else{
             var loginheader = document.querySelector('.login-title');
 
-            loginheader.innerHTML = 'There was an error. Please make sure fields are entered properly.'
+            loginheader.innerHTML = 'There was an error. Please make sure fields are entered properly.';
 
            // console.log('Please enter valid username and password')
         }
@@ -63,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var xhr = new XMLHttpRequest();
         xhr.open('POST', url);
 
-        xhr.setRequestHeader('Content-Type', 'application/json')
+        xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.addEventListener('readystatechange', function () {
             if (xhr.readyState === 4) {
                 callback(xhr);

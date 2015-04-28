@@ -3,6 +3,7 @@
   <head>
     <title>User Authentication</title>
     <link rel='stylesheet' href='/stylesheets/UserAuth.css' />
+
   </head>
   <body>
       <div class="unauthenticated-user">
@@ -63,7 +64,17 @@
           <button class = "getContacts" data-u-id = "">Get all Contacts</button>
 
       </div>
+      <script>
+          window.addEventListener('load', function(){
+              if('<%= user %>' ==='Valid'){
 
+                  document.querySelector('div.authenticated-user').classList.toggle('hide')
+                  document.querySelector('div.unauthenticated-user').classList.toggle('hide')
+              }
+              else{
+              }
+          });
+      </script>
     <script src="/javascripts/Usersignup.js"></script>
       <script src="/javascripts/Userlogin.js"></script>
       <script src="/javascripts/Authenticateduser.js"></script>
